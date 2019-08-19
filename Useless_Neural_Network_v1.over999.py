@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[23]:
 
 
 # The very first version of Neural Network 
@@ -9,17 +8,11 @@
 # This Neural Networks works with the from Wisconsin cancer dataset
 #07/26/2019 - first workable version!
 
-
-# In[24]:
-
-
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import time
 
-
-# In[25]:
 
 
 #Activation function
@@ -27,15 +20,11 @@ def sigmoid(x):
     return 1 / (1 + np.exp(-x))
 
 
-# In[26]:
-
 
 #Derivativ of the Activation function
 def sigmoid_derivative(x):
     return x * (1 - x)
 
-
-# In[27]:
 
 
 def cout(x):
@@ -54,8 +43,6 @@ def cout(x):
                 x[i] = 0
     return x
 
-
-# In[28]:
 
 
 #Neural Network
@@ -162,10 +149,6 @@ class NeuralNetwork:
         print('\nTraining successfully complete!\nIt took {} seconds\n'.format(round(final_time-initial_time, 1)))
         
 
-
-# In[29]:
-
-
 def LoadData(filename, inp_train):
     file= pd.read_csv(filename, delimiter = ',')
     dataset = file.values
@@ -186,9 +169,6 @@ def LoadData(filename, inp_train):
     data_test = Input[inp_train:, :].astype('float32') / 10
     
     return Output, Output_test, data_train, data_test
-
-
-# In[30]:
 
 
 if __name__ == '__main__':
